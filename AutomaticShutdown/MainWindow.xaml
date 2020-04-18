@@ -1,0 +1,29 @@
+﻿<Window x:Class="AutomaticShutdown.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutomaticShutdown"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        mc:Ignorable="d"
+        Title="自动关机" Height="302" Width="329.5" ResizeMode="CanMinimize" Closed="Window_Closed">
+    <Grid Margin="0">
+        <Button x:Name="startButton" Content="确定" Height="25" Margin="20,0,20,20" VerticalAlignment="Bottom" Click="startButton_Click"/>
+        <Label x:Name="speedLabel" Content="网速" Margin="100,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="195.9"/>
+        <RadioButton x:Name="rbOnlyDown" Content="仅下载" HorizontalAlignment="Left" Margin="100,66,0,0" VerticalAlignment="Top" IsChecked="True" RenderTransformOrigin="0.19,0.515"/>
+        <RadioButton x:Name="rbOnlyUp" Content="仅上传" Margin="160,66,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment"/>
+        <RadioButton x:Name="rbDownAndUp" Content="下载+上传" HorizontalAlignment="Left" Margin="220,66,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.07,1.285"/>
+        <TextBox x:Name="tbLimit" Margin="100,100,0,0" Text="100" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50" input:InputMethod.IsInputMethodEnabled="False" PreviewTextInput="tbLimit_PreviewTextInput" MaxLength="4"/>
+        <Label x:Name="label" Content="kb/s" Margin="160,100,0,0" RenderTransformOrigin="0.45,-0.222" VerticalAlignment="Top" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment" Height="23"/>
+        <Label x:Name="label1" Content="下限网速：" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="倒计时：" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.83,0.511"/>
+        <TextBox x:Name="tbCountdown" Margin="100,142.24,0,0" Text="300" Width="50" HorizontalAlignment="Left" d:LayoutOverrides="Width" input:InputMethod.IsInputMethodEnabled="False" PreviewTextInput="tbCountdown_PreviewTextInput" MaxLength="4" Height="23" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="秒" HorizontalAlignment="Left" Margin="160,142.24,0,0" RenderTransformOrigin="-0.254,-0.079" d:LayoutOverrides="HorizontalAlignment, Height" Height="23" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="实时网速：" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label x:Name="label5" Content="关机倒计时：" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="检查类型：" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="shutdownCountdownLabel" Content="-" HorizontalAlignment="Left" Height="25.24" Margin="100,180,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label x:Name="label8" Content="秒" HorizontalAlignment="Left" Margin="160,180,0,0" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" Height="23"/>
+
+    </Grid>
+</Window>
