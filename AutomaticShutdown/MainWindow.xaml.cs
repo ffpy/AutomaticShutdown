@@ -207,6 +207,7 @@ namespace AutomaticShutdown
                 startButton.Content = "确定";
                 setEditEnable(true);
                 cancelCountdown();
+                SystemSleepManagement.RestoreSleep();
             }
             else
             {
@@ -223,6 +224,7 @@ namespace AutomaticShutdown
 
                 startButton.Content = "取消";
                 setEditEnable(false);
+                SystemSleepManagement.PreventSleep();
             }
             isRunning = !isRunning;
         }
@@ -238,6 +240,7 @@ namespace AutomaticShutdown
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            SystemSleepManagement.RestoreSleep();
             Environment.Exit(0);
         }
     }
